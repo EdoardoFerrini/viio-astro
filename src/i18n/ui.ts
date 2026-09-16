@@ -1,15 +1,16 @@
 export const languages = {
-  en: 'English',
+  it: 'Italiano',
 };
 
-export const defaultLang = 'en';
+export const defaultLang = 'it';
 
 export const ui = {
-  en: {
-    'accessibility.skip-to-content': 'Skip to content',
+  it: {
+    'accessibility.skip-to-content': 'Vai al contenuto',
 
     'nav.home': 'Home',
-    'nav.about': 'About',
-    'nav.twitter': 'Twitter',
+    'nav.process': 'Come funziona',
+    'nav.models': 'Modelli',
+    'nav.faq': 'FAQ',
   },
 } as const;

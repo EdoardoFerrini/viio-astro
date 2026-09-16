@@ -1,0 +1,194 @@
+---
+interface Props {
+  title: string;
+  text?: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<div class="sy-calculator">
+  <div class="u-container container">
+    <div class="content">
+      <h2 class="u-heading title" data-sy-reveal="words">{title}</h2>
+      {
+        text ? (
+          <p class="u-text text" data-sy-reveal="lines">
+            {text}
+          </p>
+        ) : null
+      }
+    </div>
+
+    <div class="calc">
+      <div class="calc-head">
+        <label class="u-text label" for="revenue-range">
+          Fatturato online mensile
+        </label>
+        <output class="u-heading revenue" id="revenue-output">
+          € 10.000
+        </output>
+      </div>
+
+      <input
+        class="range"
+        id="revenue-range"
+        type="range"
+        min="1000"
+        max="100000"
+        step="1000"
+        value="10000"
+        aria-describedby="calc-note"
+      />
+
+      <div class="results">
+        <div class="result">
+          <span class="u-text result-label">Aliquota revenue share</span>
+          <span class="u-heading result-value" id="rate-output">12%</span>
+        </div>
+        <div class="result">
+          <span class="u-text result-label">Compenso mensile stimato</span>
+          <span class="u-heading result-value" id="fee-output">€ 1.200</span>
+        </div>
+      </div>
+
+      <p class="u-text note" id="calc-note">
+        Nessun costo di setup, nessun canone fisso. Paghi solo una percentuale
+        delle vendite online.
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sy-calculator {
+    margin: 6rem 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .title {
+    --fs: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0.1em;
+  }
+
+  .text {
+    --fs: var(--font-size-md);
+    color: var(--color-text-alt);
+    max-width: 36em;
+    text-align: center;
+    margin: 0 auto 2em;
+  }
+
+  .calc {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background: rgba(var(--rgb-brand-3), 0.55);
+    backdrop-filter: blur(6px) saturate(1.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .calc-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .label {
+    --fs: var(--font-size-sm);
+    color: var(--color-text-alt);
+  }
+
+  .revenue {
+    --fs: 2rem;
+    margin: 0;
+  }
+
+  .range {
+    width: 100%;
+    accent-color: var(--color-brand-1);
+    cursor: pointer;
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+
+    @media (--mq-phone) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .result {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgba(var(--rgb-white), 0.7);
+  }
+
+  .result-label {
+    --fs: var(--font-size-xs);
+    color: var(--color-text-alt);
+  }
+
+  .result-value {
+    --fs: 1.75rem;
+    margin: 0;
+  }
+
+  .note {
+    --fs: var(--font-size-sm);
+    color: var(--color-text-alt);
+    margin: 0;
+    text-align: center;
+  }
+</style>
+
+<script>
+  const range = document.getElementById("revenue-range");
+  const revenueOutput = document.getElementById("revenue-output");
+  const rateOutput = document.getElementById("rate-output");
+  const feeOutput = document.getElementById("fee-output");
+
+  const currency = new Intl.NumberFormat("it-IT", {
+    style: "currency",
+    currency: "EUR",
+    maximumFractionDigits: 0,
+  });
+
+  function rateFor(value) {
+    if (value <= 10000) return 0.12;
+    if (value <= 50000) return 0.08;
+    return 0.05;
+  }
+
+  function update() {
+    if (!(range instanceof HTMLInputElement)) return;
+    const revenue = Number(range.value);
+    const rate = rateFor(revenue);
+
+    if (revenueOutput) revenueOutput.textContent = currency.format(revenue);
+    if (rateOutput) rateOutput.textContent = `${Math.round(rate * 100)}%`;
+    if (feeOutput) {
+      feeOutput.textContent = currency.format(Math.round(revenue * rate));
+    }
+  }
+
+  range?.addEventListener("input", update);
+  update();
+</script>

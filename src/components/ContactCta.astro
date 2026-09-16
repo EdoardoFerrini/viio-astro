@@ -1,0 +1,83 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  title: string;
+  text: string;
+  email: string;
+  calendar?: string;
+}
+
+const { title, text, email, calendar } = Astro.props;
+---
+
+<div class="sy-contact" id="contatti">
+  <div class="u-container container">
+    <div class="inner">
+      <h2 class="u-heading title" data-sy-reveal="words">{title}</h2>
+      <p class="u-text text" data-sy-reveal="lines">{text}</p>
+      <div class="actions">
+        <Button
+          title="Prenota una call"
+          url={calendar ?? `mailto:${email}`}
+          arrow
+          color="primary"
+        />
+        <Button
+          title="Scrivici una email"
+          url={`mailto:${email}`}
+          color="primary-alt"
+        />
+      </div>
+      <p class="u-text email" data-sy-reveal="lines">{email}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .sy-contact {
+    margin: 8rem 0 4rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .inner {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 1.5rem;
+    backdrop-filter: blur(6px) saturate(1.05);
+  }
+
+  .title {
+    --fs: 3rem;
+    --lh: 1.1;
+    margin-bottom: 0.1em;
+  }
+
+  .text {
+    --fs: var(--font-size-md);
+    color: var(--color-text-alt);
+    max-width: 40em;
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .email {
+    --fs: var(--font-size-sm);
+    color: var(--color-text-alt);
+    margin: 0;
+  }
+</style>

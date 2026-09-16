@@ -9,6 +9,8 @@ import StepsTimeline from "../components/StepsTimeline.astro";
 import Plans from "../components/Plans.astro";
 import Statements from "../components/Statements.astro";
 import Introducing from "../components/Introducing.astro";
+import RevenueCalculator from "../components/RevenueCalculator.astro";
+import ContactCta from "../components/ContactCta.astro";
 import GL from "../components/GL.astro";
 import GLPlaces from "../components/GlPlaces.astro";
 
@@ -22,91 +24,97 @@ import logo7 from "../assets/logoipsum-346.svg";
 import logo8 from "../assets/logoipsum-331.svg";
 ---
 
-<Layout title="Home">
+<Layout title="Ecommerce in Revenue Share">
   <HeroHome
-    title="Build Faster. Launch Smarter."
-    subtitle="VIIO is an open-source Astro template that you can start using today. give VIIO a try!"
+    title="Il tuo ecommerce. Zero costi fissi."
+    subtitle="Progettiamo, costruiamo e gestiamo il tuo negozio online. Tu paghi solo una percentuale sulle vendite: se non vendi, non ci paghi nulla."
     cta={{
-      title: "Get Started",
-      url: "https://github.com/sijad/viio-astro",
+      title: "Prenota una call gratuita",
+      url: "#contatti",
     }}
   />
 
   <Introducing
-    title="A platform designed to turn ideas into impact"
-    text="From first concept to final delivery, our tools streamline collaboration, eliminate bottlenecks, and keep your team focused on what matters most: results. Simple to adopt, powerful at scale."
+    title="Cresciamo solo quando cresci tu"
+    text="Nessun budget iniziale, nessun canone mensile, nessuna agenzia da anticipare. Investiamo tempo e competenze nello sviluppo del tuo ecommerce e ci remuneriamo con una quota del fatturato online generato. I nostri interessi sono allineati ai tuoi: più vendi, più guadagniamo entrambi."
     cta={{
-      title: "Get Started",
-      url: "#",
+      title: "Scopri come funziona",
+      url: "#come-funziona",
     }}
   />
 
-  <StepsTimeline
-    title="How it works"
-    items={[
-      {
-        title: "Set up in minutes",
-        text: "Create your workspace, invite your team, and configure projects effortlessly—no complex onboarding or technical setup required.",
-      },
-      {
-        title: "Collaborate without friction",
-        text: "Centralize communication, assets, and tasks in one place so everyone stays aligned and productive.",
-      },
-      {
-        title: "Deliver measurable results",
-        text: "Track progress in real time, optimize workflows, and ship projects faster with complete visibility.",
-      },
-    ]}
-  />
+  <div id="come-funziona">
+    <StepsTimeline
+      title="Come funziona"
+      items={[
+        {
+          title: "Analisi e strategia",
+          text: "Studiamo il tuo prodotto, il mercato e la concorrenza. Definiamo posizionamento, catalogo, prezzi e canali di acquisizione prima di scrivere una riga di codice.",
+        },
+        {
+          title: "Sviluppo dell'ecommerce",
+          text: "Realizziamo un negozio veloce, ottimizzato per la conversione e integrato con pagamenti, logistica e strumenti marketing. Tutto a nostro carico.",
+        },
+        {
+          title: "Lancio e crescita",
+          text: "Gestiamo campagne, SEO, email e ottimizzazione continua del tasso di conversione. Monitoriamo i risultati e scaliamo ciò che funziona.",
+        },
+        {
+          title: "Compenso a revenue share",
+          text: "Fatturiamo solo una percentuale delle vendite online del mese. Nessun costo fisso, nessun vincolo di durata: restiamo finché portiamo risultati.",
+        },
+      ]}
+    />
+  </div>
 
   <GalleryText
-    title="Designed for teams that value clarity and speed"
-    text="A clean interface, powerful features, and thoughtful details come together to help your team move faster—without sacrificing quality."
+    title="Un negozio costruito per vendere, non solo per esistere"
+    text="Design curato, performance elevate e percorsi d'acquisto senza attrito. Ogni scelta tecnica è orientata a un unico obiettivo: trasformare i visitatori in clienti."
     cta={{
-      title: "Try It Today",
-      url: "#",
+      title: "Parliamo del tuo progetto",
+      url: "#contatti",
     }}
     images={[
       {
-        alt: "Dashboard overview",
+        alt: "Homepage di un ecommerce ottimizzata per la conversione",
         src: "/image-1.jpg",
         width: 6000,
         height: 4000,
       },
       {
-        alt: "Project collaboration view",
+        alt: "Scheda prodotto con immagini e dettagli",
         src: "/image-2.jpg",
         width: 2689,
         height: 4032,
       },
       {
-        alt: "Analytics and reporting",
+        alt: "Dashboard con andamento delle vendite online",
         src: "/image-3.jpg",
         width: 3734,
         height: 5359,
       },
     ]}
     marqueeTexts={[
-      "Creative Firepower",
-      "Built for Speed",
-      "Trusted by Professionals",
-      "Simple, Transparent Pricing",
+      "Zero costi di setup",
+      "Allineati ai tuoi risultati",
+      "Solo revenue share",
+      "Nessun canone mensile",
     ]}
   />
 
   <Statements
     items={[
       {
-        title: "For modern teams",
-        text: "Every feature is designed to reduce complexity and maximize execution speed.",
+        title: "Rischio zero per te",
+        text: "Non anticipi budget per sviluppo, grafica o marketing: l'investimento iniziale è interamente nostro.",
       },
       {
-        title: "Scales as you grow",
-        text: "Whether you’re a solo creator or a global team, the platform adapts to your workflow.",
+        title: "Interessi allineati",
+        text: "Il nostro compenso dipende dal tuo fatturato online. Se il negozio non vende, non guadagniamo.",
       },
       {
-        title: "Real outcomes",
-        text: "Less busywork, more progress—so you can deliver meaningful results consistently.",
+        title: "Crescita misurabile",
+        text: "Report mensili su vendite, traffico e conversione. Le decisioni si prendono sui dati, non sulle opinioni.",
       },
     ]}
   />
@@ -114,85 +122,97 @@ import logo8 from "../assets/logoipsum-331.svg";
   <TextMarquee
     class="marquee"
     texts={[
-      "Creative Firepower",
-      "Built for Speed",
-      "Trusted by Professionals",
-      "Simple, Transparent Pricing",
+      "Zero costi di setup",
+      "Allineati ai tuoi risultati",
+      "Solo revenue share",
+      "Nessun canone mensile",
     ]}
   />
 
-  <Plans
-    title="Plans & Pricing"
-    subtitle="Start for free, upgrade when you’re ready. No hidden fees, no long-term commitments."
-    items={[
-      {
-        title: "Free Plan",
-        price: {
-          amount: "$0",
-          duration: "month",
-        },
-        link: {
-          title: "Get Started Free",
-          url: "#",
-        },
-        features: [
-          { title: "Up to 50 accounts" },
-          { title: "Unlimited projects" },
-          { title: "Chat support", disabled: true },
-          { title: "Email support", disabled: true },
-          { title: "Custom onboarding", disabled: true },
-        ],
-      },
-      {
-        title: "Premium Plan",
-        price: {
-          amount: "$20",
-          duration: "month",
-        },
-        link: {
-          title: "Start 14-Day Trial",
-          url: "#",
-        },
-        features: [
-          { title: "Up to 50 accounts" },
-          { title: "Unlimited projects" },
-          { title: "Priority chat support" },
-          { title: "Email support" },
-          { title: "Custom onboarding assistance" },
-        ],
-      },
-    ]}
+  <RevenueCalculator
+    title="Calcola il tuo revenue share"
+    text="Muovi lo slider per stimare il compenso mensile in base al fatturato online del tuo negozio."
   />
+
+  <div id="modelli">
+    <Plans
+      title="Modelli di collaborazione"
+      subtitle="Due formule, stesso principio: paghi solo in base a quello che vendiamo insieme."
+      items={[
+        {
+          title: "Launch",
+          price: {
+            amount: "15%",
+            duration: "sulle vendite online",
+          },
+          link: {
+            title: "Richiedi una call",
+            url: "#contatti",
+          },
+          features: [
+            { title: "Sviluppo ecommerce incluso" },
+            { title: "Setup pagamenti e spedizioni" },
+            { title: "Tracking e analytics" },
+            { title: "Ottimizzazione conversione continua" },
+            { title: "Report mensile sulle performance" },
+          ],
+        },
+        {
+          title: "Scale",
+          price: {
+            amount: "8%",
+            duration: "sulle vendite online",
+          },
+          link: {
+            title: "Richiedi una call",
+            url: "#contatti",
+          },
+          features: [
+            { title: "Tutto del piano Launch" },
+            { title: "Gestione campagne advertising" },
+            { title: "SEO e content marketing" },
+            { title: "Email marketing e automazioni" },
+            { title: "Consulenza strategica dedicata" },
+          ],
+        },
+      ]}
+    />
+  </div>
 
   <Faqs
-    title="Frequently Asked Questions"
-    mobileTitle="FAQs"
-    subtitle="Quick answers to the most common questions."
+    title="Domande frequenti"
+    mobileTitle="FAQ"
+    subtitle="Le risposte alle domande che ci vengono poste più spesso."
     items={[
       {
-        question: "Who is this platform for?",
+        question: "Cosa significa esattamente revenue share?",
         answer:
-          "It’s built for creators, startups, agencies, and teams who want to move faster without sacrificing quality or control.",
+          "Significa che il nostro compenso è una percentuale delle vendite online del tuo ecommerce. Non ci sono costi di setup, canoni mensili o budget da anticipare.",
       },
       {
-        question: "Can I upgrade or downgrade at any time?",
+        question: "Su quale base viene calcolata la percentuale?",
         answer:
-          "Yes. You can change plans whenever you need, with no penalties or long-term contracts.",
+          "Sul fatturato netto delle vendite online, al netto di resi, rimborsi e IVA. La percentuale e le esclusioni sono definite in contratto prima dell'inizio.",
       },
       {
-        question: "Does the free plan really cost nothing?",
+        question: "Quanto costa iniziare?",
         answer:
-          "Absolutely. The free plan gives you full access to core features so you can evaluate the platform with confidence.",
+          "Nulla. Lo sviluppo, il design e l'integrazione tecnica sono a nostro carico. Iniziamo a guadagnare solo quando il negozio genera vendite.",
       },
       {
-        question: "Is my data secure?",
+        question: "Chi possiede il negozio e i dati?",
         answer:
-          "Yes. We use industry-standard security practices to protect your data and ensure reliability.",
+          "Il negozio, il dominio, il catalogo e i dati dei clienti restano di tua proprietà al 100%. Noi operiamo come partner tecnico e di crescita.",
       },
       {
-        question: "Do you offer support during onboarding?",
+        question: "Che piattaforma utilizzate?",
         answer:
-          "Premium users receive guided onboarding and priority support to ensure a smooth start.",
+          "Lavoriamo con Shopify, WooCommerce e soluzioni headless, scegliendo di volta in volta la tecnologia più adatta al tuo catalogo e ai tuoi volumi.",
+      },
+      {
+        question: "Esiste un vincolo di durata?",
+        answer:
+          "Il rapporto è a tempo indeterminato e si interrompe con un preavviso concordato. Restiamo finché generiamo valore misurabile.",
       },
     ]}
   />
@@ -232,6 +252,12 @@ import logo8 from "../assets/logoipsum-331.svg";
         alt: "Logo 7",
       },
     ]}
+  />
+
+  <ContactCta
+    title="Costruiamo il tuo ecommerce"
+    text="Raccontaci il tuo prodotto e i tuoi obiettivi. Valutiamo insieme se il modello revenue share è adatto al tuo business."
+    email="hello@storerev.com"
   />
 
   <GL />
