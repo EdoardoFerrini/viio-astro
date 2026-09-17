@@ -41,20 +41,29 @@ const { title, text } = Astro.props;
         aria-describedby="calc-note"
       />
 
+      <label class="u-text plan-label" for="plan-select">
+        Piano
+        <select id="plan-select">
+          <option value="start">Start - 79 EUR/mese + 4%</option>
+          <option value="growth">Growth - 99 EUR/mese + 3%</option>
+          <option value="managed">Managed - 249 EUR/mese + 2%</option>
+        </select>
+      </label>
+
       <div class="results">
         <div class="result">
           <span class="u-text result-label">Aliquota revenue share</span>
-          <span class="u-heading result-value" id="rate-output">12%</span>
+          <span class="u-heading result-value" id="rate-output">4%</span>
         </div>
         <div class="result">
           <span class="u-text result-label">Compenso mensile stimato</span>
-          <span class="u-heading result-value" id="fee-output">€ 1.200</span>
+          <span class="u-heading result-value" id="fee-output">€ 479</span>
         </div>
       </div>
 
       <p class="u-text note" id="calc-note">
-        Nessun costo di setup, nessun canone fisso. Paghi solo una percentuale
-        delle vendite online.
+        Nessun costo di setup. Il compenso include il canone del piano e la
+        percentuale sulle vendite online.
       </p>
     </div>
   </div>
@@ -122,6 +131,23 @@ const { title, text } = Astro.props;
     cursor: pointer;
   }
 
+  .plan-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--color-text-alt);
+  }
+
+  select {
+    border: 1px solid rgba(var(--rgb-brand-1), 0.25);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-text);
+    background: var(--color-white);
+    font: inherit;
+  }
+
   .results {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -161,6 +187,7 @@ const { title, text } = Astro.props;
 
 <script>
   const range = document.getElementById("revenue-range");
+  const planSelect = document.getElementById("plan-select");
   const revenueOutput = document.getElementById("revenue-output");
   const rateOutput = document.getElementById("rate-output");
   const feeOutput = document.getElementById("fee-output");
@@ -171,24 +198,29 @@ const { title, text } = Astro.props;
     maximumFractionDigits: 0,
   });
 
-  function rateFor(value) {
-    if (value <= 10000) return 0.12;
-    if (value <= 50000) return 0.08;
-    return 0.05;
-  }
+  const plans = {
+    start: { monthlyFee: 79, rate: 0.04 },
+    growth: { monthlyFee: 99, rate: 0.03 },
+    managed: { monthlyFee: 249, rate: 0.02 },
+  };
 
   function update() {
     if (!(range instanceof HTMLInputElement)) return;
     const revenue = Number(range.value);
-    const rate = rateFor(revenue);
+    const selectedPlan =
+      planSelect instanceof HTMLSelectElement ? planSelect.value : "start";
+    const plan = plans[selectedPlan] ?? plans.start;
 
     if (revenueOutput) revenueOutput.textContent = currency.format(revenue);
-    if (rateOutput) rateOutput.textContent = `${Math.round(rate * 100)}%`;
+    if (rateOutput) rateOutput.textContent = `${Math.round(plan.rate * 100)}%`;
     if (feeOutput) {
-      feeOutput.textContent = currency.format(Math.round(revenue * rate));
+      feeOutput.textContent = currency.format(
+        Math.round(plan.monthlyFee + revenue * plan.rate),
+      );
     }
   }
 
   range?.addEventListener("input", update);
+  planSelect?.addEventListener("change", update);
   update();
 </script>
