@@ -24,52 +24,53 @@ import logo7 from "../assets/logoipsum-346.svg";
 import logo8 from "../assets/logoipsum-331.svg";
 ---
 
-<Layout title="Ecommerce in Revenue Share">
+<Layout title="Orixa — Ecommerce in Revenue Share">
   <HeroHome
-    title="Il tuo ecommerce. Zero costi fissi."
-    subtitle="Progettiamo, costruiamo e gestiamo il tuo negozio online. Tu paghi solo una percentuale sulle vendite: se non vendi, non ci paghi nulla."
+    title="Creiamo il tuo ecommerce. Investiamo noi."
+    subtitle="Costruiamo e gestiamo il tuo store online in revenue share: nessun costo di sviluppo iniziale, guadagniamo solo su quello che vendi."
     cta={{
-      title: "Prenota una call gratuita",
+      title: "Proponi il tuo progetto",
       url: "#contatti",
     }}
   />
 
   <Introducing
-    title="Cresciamo solo quando cresci tu"
-    text="Nessun budget iniziale, nessun canone mensile, nessuna agenzia da anticipare. Investiamo tempo e competenze nello sviluppo del tuo ecommerce e ci remuneriamo con una quota del fatturato online generato. I nostri interessi sono allineati ai tuoi: più vendi, più guadagniamo entrambi."
+    title="Un ecommerce pronto a vendere. Insieme."
+    text="Progettiamo storefront che convertono, cataloghi che crescono e traffico qualificato. UX, performance e checkout pensati per trasformare le visite in ordini, con noi al tuo fianco dall'analisi alla crescita."
     cta={{
       title: "Scopri come funziona",
       url: "#come-funziona",
     }}
   />
 
-  <div id="come-funziona">
+  <div id="metodo">
     <StepsTimeline
-      title="Come funziona"
+      title="Il nostro metodo"
       items={[
         {
-          title: "Analisi e strategia",
-          text: "Studiamo il tuo prodotto, il mercato e la concorrenza. Definiamo posizionamento, catalogo, prezzi e canali di acquisizione prima di scrivere una riga di codice.",
+          title: "Ascolto",
+          text: "Partiamo dal tuo business, dal mercato e dagli obiettivi per capire dove vuoi arrivare.",
         },
         {
-          title: "Sviluppo dell'ecommerce",
-          text: "Realizziamo un negozio veloce, ottimizzato per la conversione e integrato con pagamenti, logistica e strumenti marketing. Tutto a nostro carico.",
+          title: "Analisi",
+          text: "Studiamo opportunità, catalogo e numeri per definire la strategia ecommerce più efficace.",
         },
         {
-          title: "Lancio e crescita",
-          text: "Gestiamo campagne, SEO, email e ottimizzazione continua del tasso di conversione. Monitoriamo i risultati e scaliamo ciò che funziona.",
+          title: "Sviluppo",
+          text: "Costruiamo e gestiamo il tuo store, pronto a crescere e a vendere.",
         },
         {
-          title: "Compenso a revenue share",
-          text: "Fatturiamo solo una percentuale delle vendite online del mese. Nessun costo fisso, nessun vincolo di durata: restiamo finché portiamo risultati.",
+          title: "Crescita in revenue share",
+          text: "Investiamo noi nello sviluppo e ci remuneriamo con una percentuale sulle vendite: se non vendi, non guadagniamo.",
         },
       ]}
     />
   </div>
 
+  <div id="cosa-costruiamo">
   <GalleryText
-    title="Un negozio costruito per vendere, non solo per esistere"
-    text="Design curato, performance elevate e percorsi d'acquisto senza attrito. Ogni scelta tecnica è orientata a un unico obiettivo: trasformare i visitatori in clienti."
+    title="Cosa costruiamo"
+    text="Storefront che convertono, cataloghi che crescono, traffico qualificato. Design curato, performance elevate e percorsi d'acquisto senza attrito: ogni scelta tecnica è orientata a trasformare i visitatori in clienti."
     cta={{
       title: "Parliamo del tuo progetto",
       url: "#contatti",
@@ -101,20 +102,21 @@ import logo8 from "../assets/logoipsum-331.svg";
       "Nessun canone mensile",
     ]}
   />
+  </div>
 
   <Statements
     items={[
       {
-        title: "Rischio zero per te",
-        text: "Non anticipi budget per sviluppo, grafica o marketing: l'investimento iniziale è interamente nostro.",
+        title: "Rischio condiviso",
+        text: "Il negozio non spende budget a vuoto: il partner guadagna solo se l'ecommerce cresce e vende.",
       },
       {
         title: "Interessi allineati",
-        text: "Il nostro compenso dipende dal tuo fatturato online. Se il negozio non vende, non guadagniamo.",
+        text: "Entrambe le parti puntano allo stesso obiettivo: aumentare il fatturato del negozio.",
       },
       {
-        title: "Crescita misurabile",
-        text: "Report mensili su vendite, traffico e conversione. Le decisioni si prendono sui dati, non sulle opinioni.",
+        title: "Accesso a competenze",
+        text: "Anche i negozi emergenti possono lavorare con un team ecommerce di alto livello senza investimenti iniziali.",
       },
     ]}
   />
@@ -134,16 +136,16 @@ import logo8 from "../assets/logoipsum-331.svg";
     text="Muovi lo slider per stimare il compenso mensile in base al fatturato online del tuo negozio."
   />
 
-  <div id="modelli">
+  <div id="piani">
     <Plans
-      title="Modelli di collaborazione"
-      subtitle="Due formule, stesso principio: paghi solo in base a quello che vendiamo insieme."
+      title="Il tuo store, il tuo piano"
+      subtitle="Tre livelli di supporto, stesso principio: nessun costo di sviluppo iniziale, investiamo noi e guadagniamo insieme a te."
       items={[
         {
-          title: "Launch",
+          title: "Start",
           price: {
-            amount: "15%",
-            duration: "sulle vendite online",
+            amount: "79 €/mese",
+            duration: "+ 4% sulle vendite",
           },
           link: {
             title: "Richiedi una call",
@@ -151,27 +153,43 @@ import logo8 from "../assets/logoipsum-331.svg";
           },
           features: [
             { title: "Sviluppo ecommerce incluso" },
+            { title: "Hosting e manutenzione" },
             { title: "Setup pagamenti e spedizioni" },
             { title: "Tracking e analytics" },
-            { title: "Ottimizzazione conversione continua" },
             { title: "Report mensile sulle performance" },
           ],
         },
         {
-          title: "Scale",
+          title: "Growth",
           price: {
-            amount: "8%",
-            duration: "sulle vendite online",
+            amount: "99 €/mese",
+            duration: "+ 3% sulle vendite",
           },
           link: {
             title: "Richiedi una call",
             url: "#contatti",
           },
           features: [
-            { title: "Tutto del piano Launch" },
+            { title: "Tutto del piano Start" },
             { title: "Gestione campagne advertising" },
             { title: "SEO e content marketing" },
             { title: "Email marketing e automazioni" },
+          ],
+        },
+        {
+          title: "Managed",
+          price: {
+            amount: "249 €/mese",
+            duration: "+ 2% sulle vendite",
+          },
+          link: {
+            title: "Richiedi una call",
+            url: "#contatti",
+          },
+          features: [
+            { title: "Tutto del piano Growth" },
+            { title: "Gestione catalogo e merchandising" },
+            { title: "Ottimizzazione conversione continua" },
             { title: "Consulenza strategica dedicata" },
           ],
         },
@@ -179,6 +197,7 @@ import logo8 from "../assets/logoipsum-331.svg";
     />
   </div>
 
+  <div id="faq">
   <Faqs
     title="Domande frequenti"
     mobileTitle="FAQ"
@@ -187,27 +206,27 @@ import logo8 from "../assets/logoipsum-331.svg";
       {
         question: "Cosa significa esattamente revenue share?",
         answer:
-          "Significa che il nostro compenso è una percentuale delle vendite online del tuo ecommerce. Non ci sono costi di setup, canoni mensili o budget da anticipare.",
-      },
-      {
-        question: "Su quale base viene calcolata la percentuale?",
-        answer:
-          "Sul fatturato netto delle vendite online, al netto di resi, rimborsi e IVA. La percentuale e le esclusioni sono definite in contratto prima dell'inizio.",
+          "Il nostro compenso è una percentuale delle vendite online del tuo ecommerce. Non ci sono costi di setup, canoni mensili o budget da anticipare.",
       },
       {
         question: "Quanto costa iniziare?",
         answer:
-          "Nulla. Lo sviluppo, il design e l'integrazione tecnica sono a nostro carico. Iniziamo a guadagnare solo quando il negozio genera vendite.",
+          "Nulla. Sviluppo, design e integrazione tecnica sono a nostro carico. Iniziamo a guadagnare solo quando il negozio genera vendite.",
+      },
+      {
+        question: "Su quale base viene calcolata la percentuale?",
+        answer:
+          "Sul fatturato netto delle vendite online, al netto di resi, rimborsi e IVA. Percentuale ed esclusioni sono definite in contratto prima dell'inizio.",
       },
       {
         question: "Chi possiede il negozio e i dati?",
         answer:
-          "Il negozio, il dominio, il catalogo e i dati dei clienti restano di tua proprietà al 100%. Noi operiamo come partner tecnico e di crescita.",
+          "Negozio, dominio, catalogo e dati dei clienti restano di tua proprietà al 100%. Noi operiamo come partner tecnico e di crescita.",
       },
       {
         question: "Che piattaforma utilizzate?",
         answer:
-          "Lavoriamo con Shopify, WooCommerce e soluzioni headless, scegliendo di volta in volta la tecnologia più adatta al tuo catalogo e ai tuoi volumi.",
+          "Lavoriamo con Shopify, WooCommerce e soluzioni headless, scegliendo la tecnologia più adatta al tuo catalogo e ai tuoi volumi.",
       },
       {
         question: "Esiste un vincolo di durata?",
@@ -216,6 +235,7 @@ import logo8 from "../assets/logoipsum-331.svg";
       },
     ]}
   />
+  </div>
 
   <ImageMarquee
     images={[
@@ -254,11 +274,13 @@ import logo8 from "../assets/logoipsum-331.svg";
     ]}
   />
 
+  <div id="contatti">
   <ContactCta
-    title="Costruiamo il tuo ecommerce"
-    text="Raccontaci il tuo prodotto e i tuoi obiettivi. Valutiamo insieme se il modello revenue share è adatto al tuo business."
-    email="hello@storerev.com"
+    title="Il tuo progetto può diventare un business"
+    text="Raccontaci prodotto, mercato e obiettivi. Valutiamo il potenziale e costruiamo insieme un ecommerce in revenue share."
+    email="hello@orixa.studio"
   />
+  </div>
 
   <GL />
   <GLPlaces />

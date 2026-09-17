@@ -1,4 +1,4 @@
-# StoreRev — Landing Page Ecommerce in Revenue Share
+# Orixa — Landing Page Ecommerce in Revenue Share
 
 Landing page per un business model di creazione e gestione ecommerce a **revenue share**:
 nessun costo di setup, nessun canone, compenso calcolato come percentuale sulle vendite online.
@@ -50,7 +50,7 @@ npm run build
 
 ## Personalizzazione
 
-Sostituire `hello@storerev.com` in `src/pages/index.astro` con l'indirizzo reale,
+Sostituire `hello@orixa.studio` in `src/pages/index.astro` con l'indirizzo reale,
 e aggiornare le aliquote nel componente `RevenueCalculator.astro` e nella sezione
 `Plans` di `index.astro`.
 

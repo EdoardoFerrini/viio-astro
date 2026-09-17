@@ -131,9 +131,12 @@ const { logoUrl, logoAlt, link1, link2, links } = Astro.props;
     z-index: 3;
 
     svg {
-      width: 2.4rem;
+      width: 8rem;
+      height: auto;
+      display: block;
 
-      :global(path) {
+      :global(path),
+      :global(text) {
         fill: currentcolor;
       }
     }
